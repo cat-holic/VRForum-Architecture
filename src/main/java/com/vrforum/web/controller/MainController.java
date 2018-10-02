@@ -45,7 +45,17 @@ public class MainController {
 	}
 	
 	@RequestMapping(value="/login", method=RequestMethod.POST)
-	public String loginPost(@ModelAttribute("user") UserVO userVO) {
+	public String loginPost(UserVO userVO) {
+		return "redirect:/";
+	}
+	
+	@RequestMapping(value="/signUp", method=RequestMethod.GET)
+	public String signUpGet() {
+		return "signUp";
+	}
+	
+	@RequestMapping(value="/signUp", method=RequestMethod.POST)
+	public String signUpPost(UserVO userVO) throws Exception{
 		return "redirect:/";
 	}
 }
