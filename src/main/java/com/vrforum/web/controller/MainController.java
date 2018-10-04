@@ -41,7 +41,7 @@ public class MainController {
 	
 	@RequestMapping(value="/login", method=RequestMethod.GET)
 	public String loginGet() {
-		return "login";
+		return "/gnb/login";
 	}
 	
 	@RequestMapping(value="/login", method=RequestMethod.POST)
@@ -57,5 +57,10 @@ public class MainController {
 	@RequestMapping(value="/signUp", method=RequestMethod.POST)
 	public String signUpPost(UserVO userVO) throws Exception{
 		return "redirect:/";
+	}
+	
+	@RequestMapping("test")
+	public String test() {
+		return "gnb/test";
 	}
 }
