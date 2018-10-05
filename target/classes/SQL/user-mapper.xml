@@ -13,8 +13,8 @@
 	</select>
 	
 	<select id="selectUserinfo" resultType="UserVO">
-				SELECT
-			idx, id
+		SELECT
+			id, nickname, has_vr, vr
 		FROM
 			`user`
 		WHERE

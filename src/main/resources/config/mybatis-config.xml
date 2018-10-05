@@ -10,7 +10,4 @@
 	<typeAliases>
 		<package name="com.vrforum.web.domain"/>
 	</typeAliases>
-	<mappers>
-		<mapper/>
-	</mappers>
 </configuration>

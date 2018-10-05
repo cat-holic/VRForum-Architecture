@@ -58,7 +58,7 @@
 					<button id="cancleBtn" type="button" data-dismiss="modal">
 						<span class="fa fa-times"></span> 닫기
 					</button>
-					<button id="submitBtn" type="button">
+					<button id="signupBtn" type="button">
 						<span class="fa fa-sign-in"></span> 회원가입
 					</button>
 				</div>

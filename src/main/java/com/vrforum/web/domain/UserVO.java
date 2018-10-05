@@ -1,8 +1,15 @@
 package com.vrforum.web.domain;
 
 public class UserVO {
-	private int idx;
 	private String userId;
+	private String nickname;
+	
+	public String getNickname() {
+		return nickname;
+	}
+	public void setNickname(String nickname) {
+		this.nickname = nickname;
+	}
 	private String password;
 	private boolean hasVr;
 	private String vr;
@@ -24,12 +31,6 @@ public class UserVO {
 	}
 	public void setUserId(String userId) {
 		this.userId = userId;
-	}
-	public int getIdx() {
-		return idx;
-	}
-	public void setIdx(int idx) {
-		this.idx = idx;
 	}
 	public String getPassword() {
 		return password;

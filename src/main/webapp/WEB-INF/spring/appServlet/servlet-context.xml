@@ -30,5 +30,4 @@
 			<beans:bean id="loggerInterceptor" class="com.vrforum.web.logger.LoggerIntercepter"/>
 		</interceptor>
 	</interceptors>
-	
 </beans:beans>

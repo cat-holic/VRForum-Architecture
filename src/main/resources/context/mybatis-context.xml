@@ -27,4 +27,5 @@
 		<constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory"/>
 	</bean>
 	<mybatis-spring:scan base-package="com.vrforum.web.mapper"/>
+	<!-- <bean id="jacksonMessageConverter" class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter" /> -->
 </beans>
