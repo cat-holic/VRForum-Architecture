@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page session="false"%>
-
+aa
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -13,7 +13,6 @@
 	<link href="/resources/css/main.css" rel="stylesheet" type="text/css">
 	<title>VR Forum</title>
 </head>
-
 <body>
 	<div id="container">
 		<div id="gnb">
