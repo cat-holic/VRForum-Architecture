@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.vrforum.web.domain.UserVO;
+import com.vrforum.web.domain.UserVrVO;
 import com.vrforum.web.service.UserService;
 
 /**
@@ -30,59 +31,81 @@ import com.vrforum.web.service.UserService;
 public class MainController {
 	@Inject
 	UserService userDAO;
-	
+
 	private static final Logger logger = LoggerFactory.getLogger(MainController.class);
-	
+
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Locale locale, Model model, HttpSession session) {
 		logger.info("Welcome home! The client locale is {}.", locale);
-		
+
 		Date date = new Date();
 		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
-		
+
 		String formattedDate = dateFormat.format(date);
-		
-		model.addAttribute("serverTime", formattedDate );
+
+		model.addAttribute("serverTime", formattedDate);
 		return "home";
 	}
-	
-	
-	
-	@RequestMapping(value="/login", method=RequestMethod.POST)
+
+	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public @ResponseBody Map<String, Object> loginPost(@RequestBody UserVO userVO, HttpSession session) {
 		UserVO resultUserVO;
 		Map<String, Object> data = new HashMap<>();
 		try {
-			resultUserVO = userDAO.login(userVO);
-			if (resultUserVO != null) {
-				session.setAttribute("loginUser", resultUserVO);
-				data.put("result", true);
-			}
-			else {
+			if (session.getAttribute("loginedUser") != null) {
+				resultUserVO = (UserVO)session.getAttribute("loginedUser");
+				logger.debug("로그인 실패 id: " + resultUserVO.getUserId() + "로그인 되어있음");
 				data.put("result", false);
+			} else {
+				resultUserVO = userDAO.login(userVO);
+				session.setAttribute("loginedUser", resultUserVO);
+				data.put("result", true);
+				logger.debug("로그인 성공  id: " + resultUserVO.getUserId());
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
-			logger.debug("찾을수 없음 : "+e.toString());
+			logger.debug("찾을수 없음 : " + e.toString());
 			data.put("result", false);
 			data.put("msg", e.toString());
 		}
 		return data;
 	}
-	
-	@RequestMapping(value="/signUp", method=RequestMethod.GET)
-	public String signUpGet() {
-		return "signUp";
+
+	@RequestMapping(value = "logout")
+	public @ResponseBody Map<String, Object> logout(HttpSession session, String msg) {
+		Map<String, Object> data = new HashMap<>();
+		logger.debug(msg);
+		try {
+			session.removeAttribute("loginedUser");
+			data.put("result", true);
+		} catch (IllegalStateException e) {
+			data.put("result", false);
+		}
+		return data;
 	}
-	
-	@RequestMapping(value="/signUp", method=RequestMethod.POST)
-	public String signUpPost(UserVO userVO) throws Exception{
-		return "redirect:/";
+
+	@RequestMapping(value = "/signUp", method = RequestMethod.POST)
+	public @ResponseBody Map<String, Object> signUp(@RequestBody UserVrVO userVrVO,
+			HttpSession session) throws Exception {
+		Map<String, Object> resultData = new HashMap<>();
+		
+		if(userVrVO.getUserId() == null) {
+			logger.debug("아이디 값 없음");
+			resultData.put("result", false);
+			resultData.put("msg", "입력된 데이터 없음");
+		}else {
+			logger.debug(userVrVO.toString());
+			userDAO.signUp(userVrVO);
+			resultData.put("result", true);
+			session.setAttribute("loginedUser", userDAO.login(userVrVO));
+		}
+		
+		return resultData;
 	}
-	
+
 	@RequestMapping("test")
 	public String test() {
 		return "gnb/test";

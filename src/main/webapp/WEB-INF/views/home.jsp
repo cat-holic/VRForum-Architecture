@@ -1,8 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ page session="false"%>
-aa
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -17,6 +15,7 @@ aa
 	<div id="container">
 		<div id="gnb">
 			<%@ include file="gnb/userMenu.jsp"%>
+			<%@ include file="gnb/mainMenu.jsp"%>
 		</div>
 		<h1>Hello world!</h1>
 	</div>

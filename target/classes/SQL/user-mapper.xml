@@ -14,26 +14,23 @@
 	
 	<select id="selectUserinfo" resultType="UserVO">
 		SELECT
-			id, nickname, has_vr, vr
+			user_id, nickname, user_has_vr
 		FROM
 			`user`
 		WHERE
-			id = #{userId} AND password = #{password}
+			user_id = #{userId} AND password = #{password}
 	</select>
 	
 	<insert id="insertUser">
 		INSERT INTO
-		<choose>
-			<when test="#{hasVr}">
- 				`user` (id, password, has_vr, vr)
+				`user` (user_id, password, nickname, user_has_vr)
+		VALUES
+			(#{userId}, #{password}, #{nickname}, #{userHasVr});
+	</insert>
+	<insert id="insertUserVr">
+			INSERT INTO
+				`user_vr`
 			VALUES
-				(#{userId}, #{password}, #{hasVr}, #{vr})
-			</when>
-			<otherwise>
-				`user` (id, password, has_vr)
-			VALUES
-				(#{userId}, #{password}, #{hasVr})
-			</otherwise>
-		</choose>	
+				(#{userId}, #{vive}, #{vivePro}, #{oculus}, #{psVr}, #{mr}, #{etc}, #{etcName});
 	</insert>
 </mapper>

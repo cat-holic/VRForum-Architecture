@@ -1,8 +1,11 @@
 package com.vrforum.web.domain;
 
+
 public class UserVO {
 	private String userId;
 	private String nickname;
+	private String password;
+	private boolean userHasVr;
 	
 	public String getNickname() {
 		return nickname;
@@ -10,22 +13,19 @@ public class UserVO {
 	public void setNickname(String nickname) {
 		this.nickname = nickname;
 	}
-	private String password;
-	private boolean hasVr;
-	private String vr;
-	
-	public boolean isHasVr() {
-		return hasVr;
+
+	@Override
+	public String toString() {
+		return "UserVO [userId=" + userId + ", nickname=" + nickname + ", password=" + password + ", userHasVr="
+				+ userHasVr + "]";
 	}
-	public void setHasVr(boolean hasVr) {
-		this.hasVr = hasVr;
+	public boolean isUserHasVr() {
+		return userHasVr;
 	}
-	public String getVr() {
-		return vr;
+	public void setUserHasVr(boolean userHasVr) {
+		this.userHasVr = userHasVr;
 	}
-	public void setVr(String vr) {
-		this.vr = vr;
-	}
+
 	public String getUserId() {
 		return userId;
 	}

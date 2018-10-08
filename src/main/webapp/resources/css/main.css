@@ -1,16 +1,19 @@
 @charset "UTF-8";
 
-a{
+a {
 	color: black;
 }
-a:visited{
-    text-decoration: none;
-    color: black;
+
+a:visited {
+	text-decoration: none;
+	color: black;
 }
-a:link{
-    text-decoration: none;
-    color: black;
+
+a:link {
+	text-decoration: none;
+	color: black;
 }
+
 #logoImg {
 	margin-top: 5%;
 	text-align: center;
@@ -42,9 +45,10 @@ a:link{
 	height: 5em;
 }
 
-#loginForm tr{
+#loginForm tr {
 	height: 2em;
 }
+
 #loginForm td {
 	border-bottom: 1px solid pink;
 	padding-left: 7px;
@@ -55,10 +59,11 @@ a:link{
 	outline: none;
 }
 
-#signupForm{
-    text-align: center;
-    margin-bottom: 40px;
+#signupForm {
+	text-align: center;
+	margin-bottom: 40px;
 }
+
 #signupForm table {
 	text-align: left;
 	width: 70%;
@@ -66,13 +71,14 @@ a:link{
 	border: 1px solid pink;
 }
 
-#signupForm tr{
+#signupForm tr {
 	height: 4em;
 }
 
 #vrTr {
 	height: 40px;
 }
+
 #signupForm td {
 	border-bottom: 1px solid pink;
 	padding-left: 7px;
@@ -121,6 +127,20 @@ a:link{
 	background-color: #ffB4DD;
 }
 
-.necesseryPoint{
-    color:red;
+.necesseryPoint {
+	color: red;
+}
+
+#mainMenu {
+	background-color: blue;
+}
+
+#mainMenu ul {
+	background-color: red;
+	margin-top: 10px;
+}
+
+#mainMenu ul li {
+	display: inline-block;
+	margin-right: 3px;
 }

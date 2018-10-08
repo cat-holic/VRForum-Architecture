@@ -26,7 +26,6 @@ public class TestMapper {
 		UserVO user = new UserVO();
 		user.setUserId("test");
 		user.setPassword("test");
-		user.setHasVr(false);
-		mapper.insertUser(user);
+;
 	}
 }

@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" />
-<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <div class="modal fade" id="loginLayer">
 	<div class="modal-dialog">
 		<div class="modal-content">
@@ -101,48 +100,31 @@
 	// 		});
 	// 	});
 	// });
-	$(document).ready(function () {
-		$.fn.serializeObject = function(){
-			   var o = {};
-			   var a = this.serializeArray();
-			   $.each(a, function() {
-			       if (o[this.name]) {
-			           if (!o[this.name].push) {
-			               o[this.name] = [o[this.name]];
-			           }
-			           o[this.name].push(this.value || '');
-			       } else {
-			           o[this.name] = this.value || '';
-			       }
-			   });
-			   return o;
-			};
-		$('#loginBtn').on('click', function () {
-			console.log("로그인시도");
-			var formObj = $('#loginForm').serializeObject();
-			// var loginData = formObj.serialize();
-			var loginData = formObj;
-			// JSON.stringify(loginData)
-			console.log(JSON.stringify(loginData));
-			$.ajax({
-				type: "post",
-				url: "/login",
-				contentType: 'application/json; charset=UTF-8',
-				dataType: 'json',
-				data: JSON.stringify(loginData),
-				success: function (data) {
-					console.log(data);
-					if(data.result == true){
-						alert("성공");
-						loaction.href="/";
-					}else{
-						alert("실패");
-					}	
-				},
-				error:function(msg){
-					console.log(msg);
-				}
-			});
+	$('#loginBtn').on('click', function () {
+		console.log("로그인시도");
+		var formObj = $('#loginForm').serializeObject();
+		// var loginData = formObj.serialize();
+		var loginData = formObj;
+		// JSON.stringify(loginData)
+		console.log(JSON.stringify(loginData));
+		$.ajax({
+			type: "post",
+			url: "/login",
+			contentType: 'application/json; charset=UTF-8',
+			dataType: 'json',
+			data: JSON.stringify(loginData),
+			success: function (data) {
+				console.log(data);
+				if(data.result == true){
+					location.reload();
+					console.log("로그인 성공");
+				}else{
+					console.log("로그인 실패");
+				}	
+			},
+			error:function(msg){
+				console.log(msg);
+			}
 		});
 	});
 
