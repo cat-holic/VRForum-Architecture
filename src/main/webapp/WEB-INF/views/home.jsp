@@ -14,8 +14,13 @@
 <body>
 	<div id="container">
 		<div id="gnb">
-			<%@ include file="gnb/userMenu.jsp"%>
-			<%@ include file="gnb/mainMenu.jsp"%>
+			<span>
+				<img src="/resources/img/logo.jpg" style="display: inline;">
+			</span>
+			<span>
+				<%@ include file="gnb/userMenu.jsp"%>
+				<%@ include file="gnb/mainMenu.jsp"%>
+			</span>
 		</div>
 		<h1>Hello world!</h1>
 	</div>
