@@ -23,9 +23,9 @@
 	
 	<insert id="insertUser">
 		INSERT INTO
-				`user` (user_id, password, nickname, user_has_vr)
+				`user` (user_id, password, nickname, email, user_has_vr)
 		VALUES
-			(#{userId}, #{password}, #{nickname}, #{userHasVr});
+			(#{userId}, #{password}, #{nickname}, #{email}, #{userHasVr});
 	</insert>
 	<insert id="insertUserVr">
 			INSERT INTO

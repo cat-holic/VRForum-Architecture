@@ -5,6 +5,7 @@ public class UserVO {
 	private String userId;
 	private String nickname;
 	private String password;
+	private String email;
 	private boolean userHasVr;
 	
 	public String getNickname() {
@@ -44,4 +45,12 @@ public class UserVO {
 		}
 		return false;
 	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	
+	
 }
