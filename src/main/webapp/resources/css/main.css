@@ -139,18 +139,19 @@ a:link {
 	background-color: #FF9999;
 }
 
-#mainMenu ul {
+ul#mainMenuList {
 	position: absolute;
 	bottom: 0px;
 	margin-bottom: 0px;
 	margin-left: 20px;
 }
 
-#mainMenu ul li {
+#mainMenuList > li {
 	display: inline-block;
 	margin-right: 18px;
 	font-size: 1.5em;
 	font-weight: 1000;
+	float: left;
 }
 
 #mainLogoWrap {
@@ -196,4 +197,20 @@ a:link {
 
 .container-fluid{
 	width: 1280px;
+}
+
+.subMenu {
+	display: none;
+	padding:15px 0px 5px 0px;
+	position: absolute;
+	top:30px;
+	left:0;
+	width: 1000px;
+}
+.subMenu div ul {
+	list-style-type: none;
+}
+.subMenu div ul li a:link {
+	text-decoration: none;
+	color: black;
 }
