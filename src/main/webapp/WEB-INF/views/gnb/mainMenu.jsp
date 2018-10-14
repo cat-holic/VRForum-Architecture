@@ -3,7 +3,7 @@
 <div id="mainMenu">
 	<ul id="mainMenuList">
 		<li class="md1"><a><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span></a></li>
-		<li>
+		<li class="md1">
 			<a>NEWS</a>
 			<div class="subMenu s1">
 				<div>
@@ -40,3 +40,11 @@
 		<li class="md1"><a>VR Room</a></li>
 	</ul>
 </div>
+<script>
+$('.md1').on("click", function(){
+	subMenu = $(this).find('.subMenu');
+	subMenu.attr('display', 'block');
+	console.log("실행됨");
+	console.log(subMenu);
+});
+</script>

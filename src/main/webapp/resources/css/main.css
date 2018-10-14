@@ -196,14 +196,14 @@ ul#mainMenuList {
 }
 
 .container-fluid{
-	width: 1280px;
+	width:100%;
+	min-width: 1280px;
 }
 
 .subMenu {
-	display: none;
 	padding:15px 0px 5px 0px;
 	position: absolute;
-	top:30px;
+	top:100px;
 	left:0;
 	width: 1000px;
 }
