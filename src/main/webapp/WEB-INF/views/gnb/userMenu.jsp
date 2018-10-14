@@ -2,9 +2,6 @@
 	pageEncoding="UTF-8"%>
 <%@ page session="true"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<script type="text/javascript"
-	src="http://code.jquery.com/jquery-latest.min.js"></script>
-<script type="text/javascript" src="/resources/js/user.js"></script>
 <div id="userMenu">
 	<ul>
 		<c:if test="${loginedUser ne null}">
@@ -65,3 +62,4 @@ $(document).ready(function () {
 </script>
 <%@ include file="userMenu/login.jsp"%>
 <%@ include file="userMenu/signup.jsp"%>
+
