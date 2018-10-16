@@ -27,11 +27,7 @@ a:link {
 	margin-right: 20px;
 }
 
-#userMenu ul {
-
-}
-
-#userMenu ul li {
+#userMenu > ul > li {
 	display: inline-block;
 	margin-right: 3px;
 }
@@ -40,7 +36,7 @@ a:link {
 	text-align: center;
 }
 
-#loginForm table {
+#loginForm > table {
 	text-align: left;
 	width: 25%;
 	margin: auto;
@@ -48,7 +44,7 @@ a:link {
 	height: 5em;
 }
 
-#loginForm tr {
+#loginForm > tr {
 	height: 2em;
 }
 
@@ -199,10 +195,7 @@ ul#mainMenuList {
 	min-width:1000px;
 	margin-top: 10px;
 	height: 80px;
-}
-
-#contents{
-
+	margin-bottom: 20px;
 }
 
 .container-fluid{
@@ -257,4 +250,60 @@ ul#mainMenuList {
 	width: calc(70% - 50px);
 	height:300px;
 	background-color: blue;
+}
+
+#main{
+	width: 100%;
+	text-align: center;
+}
+
+#mainWrap{
+	display:inline-block;
+	vertical-align:top;
+	min-width: 1000px;
+	width: 90%;
+}
+
+.sideNav{
+	display: inline-block;
+	vertical-align: top;
+	width: 20%;
+	margin-right: -4px;
+	height: 400px;
+	background-color: #CC66FF;
+	text-align: left;
+}
+
+.mainContents{
+	display: inline-block;
+	vertical-align: top;
+	width: 80%;
+	background-color: blue;
+}
+
+.sidNavMenuWrap{
+
+}
+
+.sidNavMenuWrap > ul{
+	list-style: none;
+}
+
+.sidNavMenuWrap > ul > li:first-child{
+	background-color: darkcyan;
+}
+
+.sidNavMenuWrap > ul > li:first-child > span{
+	font-weight: 1000;
+	font-size: 1.5em;
+	margin: 0 20px 0 20px;
+}
+
+.sidNavMenuWrap > ul > li{
+	margin-bottom: 6px;
+}
+
+a.sideNavMenu{
+	text-decoration: none;
+	margin: 0 20px 0 20px;
 }

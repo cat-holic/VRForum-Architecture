@@ -7,7 +7,14 @@ public class UserVO {
 	private String password;
 	private String email;
 	private boolean userHasVr;
+	private boolean admin;
 	
+	public boolean isAdmin() {
+		return admin;
+	}
+	public void setAdmin(boolean admin) {
+		this.admin = admin;
+	}
 	public String getNickname() {
 		return nickname;
 	}

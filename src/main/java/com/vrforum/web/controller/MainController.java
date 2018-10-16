@@ -74,7 +74,7 @@ public class MainController {
 		return data;
 	}
 
-	@RequestMapping(value = "logout")
+	@RequestMapping(value = "/logout")
 	public @ResponseBody Map<String, Object> logout(HttpSession session, String msg) {
 		Map<String, Object> data = new HashMap<>();
 		logger.debug(msg);
@@ -106,8 +106,13 @@ public class MainController {
 		return resultData;
 	}
 
-	@RequestMapping("test")
+	@RequestMapping("/test")
 	public String test() {
 		return "gnb/test";
+	}
+	
+	@RequestMapping("/VrMachine/typicalVrMachine")
+	public String typicalVrMachine() {
+		return "/VrMachine/typicalVrMachine";
 	}
 }

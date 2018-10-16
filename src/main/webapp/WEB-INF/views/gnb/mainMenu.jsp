@@ -1,10 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <div id="mainMenu">
 	<ul id="mainMenuList">
-		<li class="md1"><a><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span></a></li>
+		<li class="md1 m1"><a><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span></a></li>
 		<li class="md1">
-			<a class="md1Text">NEWS</a>
+			<a <c:choose><c:when test="${mainMenu } == 1">class="selectedMainMenu md1Text"</c:when><c:otherwise>class="md1Text"</c:otherwise></c:choose>>NEWS</a>
 			<div class="subMenu s1">
 				<div class="subMenuListWrap">
 					<ul class="subMenuList">
@@ -20,8 +21,8 @@
 				</div>
 			</div>
 		</li>
-		<li class="md1">
-			<a class="md1Text">VR Machine</a>
+		<li class="md1 m2">
+			<a <c:choose><c:when test="${mainMenu } eq 2">class="selectedMainMenu md1Text"</c:when><c:otherwise>class="md1Text"</c:otherwise></c:choose>>VR Machine</a>
  			<div class="subMenu s2">
 				<div class="subMenuListWrap">
 					<ul class="subMenuList">
@@ -52,7 +53,6 @@ $(document).ready(function(){
 		if (subMenu.css("display") == "none"){
 			$('.subMenuList:first-child > li:first > a').removeClass("subMenuSelected");
 			$('.subMenuList:first-child > li:first > a').addClass("subMenuSelected");
-			$('.subMenuList:first-child > li:first > a').text("tt");
 			subMenu.slideDown(200);
 		}
 	}).on("mouseleave", function(){
