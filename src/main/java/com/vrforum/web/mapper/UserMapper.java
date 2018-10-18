@@ -1,7 +1,6 @@
 package com.vrforum.web.mapper;
 
 import org.apache.ibatis.annotations.Mapper;
-
 import com.vrforum.web.domain.UserVO;
 import com.vrforum.web.domain.UserVrVO;
 
@@ -11,4 +10,5 @@ public interface UserMapper {
 	public UserVO selectUserinfo(UserVO userVO) throws Exception;
 	public void insertUser(UserVO userVO) throws Exception;
 	public void insertUserVr(UserVrVO userVrVO) throws Exception;
+
 }

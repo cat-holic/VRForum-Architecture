@@ -3,18 +3,17 @@ package com.vrforum.web.controller;
 import java.text.DateFormat;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
 import javax.inject.Inject;
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -22,6 +21,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.vrforum.web.domain.UserVO;
 import com.vrforum.web.domain.UserVrVO;
+import com.vrforum.web.domain.VrMachineVO;
+import com.vrforum.web.mapper.VrInfoMapper;
 import com.vrforum.web.service.UserService;
 
 /**
@@ -31,7 +32,10 @@ import com.vrforum.web.service.UserService;
 public class MainController {
 	@Inject
 	UserService userDAO;
-
+	
+	@Inject
+	VrInfoMapper vrInfoMapper;
+	
 	private static final Logger logger = LoggerFactory.getLogger(MainController.class);
 
 	/**
@@ -111,8 +115,12 @@ public class MainController {
 		return "gnb/test";
 	}
 	
+
+	
 	@RequestMapping("/VrMachine/typicalVrMachine")
-	public String typicalVrMachine() {
+	public String typicalVrMachine(Model model) throws Exception {
+		List<VrMachineVO> vrMachineVOs = vrInfoMapper.selectVrMachines();
+		model.addAttribute("vrMachineVOs", vrMachineVOs);
 		return "/VrMachine/typicalVrMachine";
 	}
 }

@@ -1,7 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ include file="../header.jsp?&mainMenu=2" %>
+<jsp:include page="../header.jsp">
+	<jsp:param value="2" name="activeMainMenu"/>
+</jsp:include>
+
 <div id="main">
 	<div id="mainWrap">
 		<div class="sideNav">
@@ -19,7 +22,36 @@
 			</div>
 		</div>
 		<div class="mainContents">
-			tt
+			<ul class="introVrMachine">
+			<c:forEach items="${vrMachineVOs}" var="vrMachine" begin="0" end="2">
+				<li>
+					<div>
+						<a>
+							<img src="${vrMachine.filePath}" style="width: 300px; height: 180px;">
+							<span style="display: block;">${vrMachine.name }</span>
+						</a>
+						<div>
+							<span>${vrMachine.price }</span>
+						</div>
+					</div>
+				</li>
+			</c:forEach>
+			</ul>
+			<ul class="introVrMachine">
+			<c:forEach items="${vrMachineVOs}" var="vrMachine" begin="3" end="5">
+				<li>
+					<div>
+						<a>
+							<img src="${vrMachine.filePath}" style="width: 300px; height: 180px;">
+							<span style="display: block;">${vrMachine.name }</span>
+						</a>
+						<div>
+							<span>${vrMachine.price }</span>
+						</div>
+					</div>
+				</li>
+			</c:forEach>
+			</ul>
 		</div>
 	</div>
 </div>

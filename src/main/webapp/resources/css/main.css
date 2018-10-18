@@ -278,7 +278,7 @@ ul#mainMenuList {
 	display: inline-block;
 	vertical-align: top;
 	width: 80%;
-	background-color: blue;
+	background-color: #AAFF99;
 }
 
 .sidNavMenuWrap{
@@ -306,4 +306,16 @@ ul#mainMenuList {
 a.sideNavMenu{
 	text-decoration: none;
 	margin: 0 20px 0 20px;
+}
+
+.introVrMachine {
+	list-style: none;
+}
+
+.introVrMachine > li{
+	float: left;
+	margin-left: 10px;
+}
+.introVrMachine > li:first-child{
+	margin-left: 0px;
 }

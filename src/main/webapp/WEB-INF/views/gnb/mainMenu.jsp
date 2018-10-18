@@ -5,7 +5,7 @@
 	<ul id="mainMenuList">
 		<li class="md1 m1"><a><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span></a></li>
 		<li class="md1">
-			<a <c:choose><c:when test="${mainMenu } == 1">class="selectedMainMenu md1Text"</c:when><c:otherwise>class="md1Text"</c:otherwise></c:choose>>NEWS</a>
+			<a <c:choose><c:when test="${param.activeMainMenu eq 1 }">class="selectedMainMenu md1Text"</c:when><c:otherwise>class="md1Text"</c:otherwise></c:choose>>NEWS</a>
 			<div class="subMenu s1">
 				<div class="subMenuListWrap">
 					<ul class="subMenuList">
@@ -22,12 +22,12 @@
 			</div>
 		</li>
 		<li class="md1 m2">
-			<a <c:choose><c:when test="${mainMenu } eq 2">class="selectedMainMenu md1Text"</c:when><c:otherwise>class="md1Text"</c:otherwise></c:choose>>VR Machine</a>
+			<a <c:choose><c:when test="${param.activeMainMenu eq 2}">class="selectedMainMenu md1Text"</c:when><c:otherwise>class="md1Text"</c:otherwise></c:choose>>VR Machine</a>
  			<div class="subMenu s2">
 				<div class="subMenuListWrap">
 					<ul class="subMenuList">
 						<li><a>VR이란?</a></li>
-						<li><a>대표 VR기기</a></li>
+						<li><a href="/VrMachine/typicalVrMachine">대표 VR기기</a></li>
 						<li><a>VR HDM 상세제원</a></li>
 						<li><a>VR HDM 기기별 비교</a></li>
 						<li><a>VR HDM 리뷰</a></li>
@@ -58,8 +58,8 @@ $(document).ready(function(){
 	}).on("mouseleave", function(){
 		var subMenu = $(this).find('.subMenu');
 		var menuText = $(this).find('.md1Text');
-		
 		menuText.removeClass("selectedMainMenu");
+
 		if (subMenu.css("display") == "block"){
 			$('.subMenuList:first-child li:first').removeClass("subMenuSelected");
 			subMenu.slideUp(200);
