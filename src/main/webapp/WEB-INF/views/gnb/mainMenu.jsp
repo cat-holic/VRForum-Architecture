@@ -27,7 +27,7 @@
 				<div class="subMenuListWrap">
 					<ul class="subMenuList">
 						<li><a>VR이란?</a></li>
-						<li><a href="/VrMachine/typicalVrMachine">대표 VR기기</a></li>
+						<li><a href="/vrMachine/typicalVrMachine">대표 VR기기</a></li>
 						<li><a>VR HDM 상세제원</a></li>
 						<li><a>VR HDM 기기별 비교</a></li>
 						<li><a>VR HDM 리뷰</a></li>
@@ -37,7 +37,21 @@
 				</div>
 			</div>
 		</li>
-		<li class="md1"><a class="md1Text">VR Game</a></li>
+		<li class="md1">
+		<a <c:choose><c:when test="${param.activeMainMenu eq 3 }">class="selectedMainMenu md1Text"</c:when><c:otherwise>class="md1Text"</c:otherwise></c:choose>>VR Game</a>
+		 	<div class="subMenu s2">
+				<div class="subMenuListWrap">
+					<ul class="subMenuList">
+						<li><a href="/vrGame/vrGameList">게임목록</a></li>
+						<li><a href="#">대표 VR기기</a></li>
+						<li><a>랭킹 순위</a></li>
+						<li><a>추천 게임</a></li>
+						<li><a>신작</a></li>
+						<li><a>리뷰</a></li>
+					</ul>
+				</div>
+			</div>
+		</li>
 		<li class="md1"><a class="md1Text">VR Movie</a></li>
 		<li class="md1"><a class="md1Text">VR Shopping</a></li>
 		<li class="md1"><a class="md1Text">VR Community</a></li>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.vrforum.web.mapper.GameMapper">
+	<select id="selectVO" resultType="GameVO">
+		SELECT * 
+		FROM `game_list`
+		WHERE idx = #{idx};
+	</select>
+	
+	<select id="selectVOs" resultType="GameVO">
+		SELECT * FROM `game_list`;
+	</select>
+	
+	<select id="selectSearchVOs" resultType="GameVO">
+		SELECT * 
+		FROM `game_list`
+		WHERE `name` LIKE "%${keyword}%" OR tags LIKE "%${keyword}%";
+	</select>
+</mapper>

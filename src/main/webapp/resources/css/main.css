@@ -1,8 +1,10 @@
 @charset "UTF-8";
+
 * {
 	padding: 0;
 	margin: 0;
 }
+
 a {
 	color: black;
 }
@@ -27,7 +29,7 @@ a:link {
 	margin-right: 20px;
 }
 
-#userMenu > ul > li {
+#userMenu>ul>li {
 	display: inline-block;
 	margin-right: 3px;
 }
@@ -36,7 +38,7 @@ a:link {
 	text-align: center;
 }
 
-#loginForm > table {
+#loginForm>table {
 	text-align: left;
 	width: 25%;
 	margin: auto;
@@ -44,7 +46,7 @@ a:link {
 	height: 5em;
 }
 
-#loginForm > tr {
+#loginForm>tr {
 	height: 2em;
 }
 
@@ -141,22 +143,22 @@ ul#mainMenuList {
 	margin-left: 20px;
 }
 
-#mainMenuList > li {
+#mainMenuList>li {
 	display: inline-block;
 	margin-right: 18px;
 	font-size: 1.5em;
 	font-weight: 1000;
 }
 
-#mainMenuList > li > a{
+#mainMenuList>li>a {
 	text-decoration: none;
 }
 
-#mainMenuList > li > a:hover{
+#mainMenuList>li>a:hover {
 	color: #f52390;
 }
 
-.selectedMainMenu{
+.selectedMainMenu {
 	color: #f52390;
 }
 
@@ -164,52 +166,52 @@ ul#mainMenuList {
 	vertical-align: top;
 	display: inline-block;
 	position: relative;
-	min-width:120px;
-	width:120px;
-	height:80px;
+	min-width: 120px;
+	width: 120px;
+	height: 80px;
 	background-color: #99FFAA;
 	margin-right: -4px;
 	border-bottom: 2px #f52390 solid;
 }
 
-#mainLogo{
-	position:absolute;
-	bottom:0;
-	margin:auto;
+#mainLogo {
+	position: absolute;
+	bottom: 0;
+	margin: auto;
 	max-width: 100%;
 }
 
 .gnbMenuWrap {
-	padding-left:10px;
+	padding-left: 10px;
 	vertical-align: top;
 	display: inline-block;
-	position:relative;
+	position: relative;
 	width: calc(100% - 120px);
-	min-width:1036px;
+	min-width: 1036px;
 	height: 80px;
 	border-bottom: 2px #f52390 solid;
 }
 
-#gnb{
-	width:100%;
-	min-width:1000px;
+#gnb {
+	width: 100%;
+	min-width: 1000px;
 	margin-top: 10px;
 	height: 80px;
 	margin-bottom: 20px;
 }
 
-.container-fluid{
-	width:100%;
+.container-fluid {
+	width: 100%;
 	min-width: 1280px;
 	padding: 0;
 }
 
 .subMenu {
-	display : none;
-	padding:10px 0px 5px 0px;
+	display: none;
+	padding: 10px 0px 5px 0px;
 	position: absolute;
-	top:30px;
-	left:0;
+	top: 30px;
+	left: 0;
 	min-width: 1000px;
 	background-color: #CC66FF;
 	border: 2px #f52390 solid;
@@ -217,9 +219,9 @@ ul#mainMenuList {
 	border-radius: 0 0 10px 10px;
 }
 
-.subMenuListWrap{
+.subMenuListWrap {
 	display: inline-block;
-	vertical-align:top;
+	vertical-align: top;
 	width: 30%;
 }
 
@@ -228,43 +230,44 @@ ul#mainMenuList {
 	margin-left: 15px;
 }
 
-.subMenu div ul li{
+.subMenu div ul li {
 	margin-bottom: 3px;
 }
 
-.subMenuList > li > a{
+.subMenuList>li>a {
 	text-decoration: none;
 	color: black;
 }
 
-.subMenuList > li > a:hover{
+.subMenuList>li>a:hover {
 	color: red;
 }
 
-.subMenuSelected{
+.subMenuSelected {
 	color: red;
 }
-.subMenuContents{
+
+.subMenuContents {
 	display: inline-block;
-	vertical-align:top;
+	vertical-align: top;
 	width: calc(70% - 50px);
-	height:300px;
+	height: 300px;
 	background-color: blue;
 }
 
-#main{
+#main {
 	width: 100%;
 	text-align: center;
 }
 
-#mainWrap{
-	display:inline-block;
-	vertical-align:top;
+#mainWrap {
+	display: inline-block;
+	vertical-align: top;
 	min-width: 1000px;
 	width: 90%;
 }
 
-.sideNav{
+.sideNav {
 	display: inline-block;
 	vertical-align: top;
 	width: 20%;
@@ -274,36 +277,37 @@ ul#mainMenuList {
 	text-align: left;
 }
 
-.mainContents{
+.mainContents {
 	display: inline-block;
 	vertical-align: top;
 	width: 80%;
 	background-color: #AAFF99;
+	padding:0 10px 0 10px; 
 }
 
-.sidNavMenuWrap{
-
+.sidNavMenuWrap {
+	
 }
 
-.sidNavMenuWrap > ul{
+.sidNavMenuWrap>ul {
 	list-style: none;
 }
 
-.sidNavMenuWrap > ul > li:first-child{
+.sidNavMenuWrap>ul>li:first-child {
 	background-color: darkcyan;
 }
 
-.sidNavMenuWrap > ul > li:first-child > span{
+.sidNavMenuWrap>ul>li:first-child>span {
 	font-weight: 1000;
 	font-size: 1.5em;
 	margin: 0 20px 0 20px;
 }
 
-.sidNavMenuWrap > ul > li{
+.sidNavMenuWrap>ul>li {
 	margin-bottom: 6px;
 }
 
-a.sideNavMenu{
+a.sideNavMenu {
 	text-decoration: none;
 	margin: 0 20px 0 20px;
 }
@@ -312,10 +316,15 @@ a.sideNavMenu{
 	list-style: none;
 }
 
-.introVrMachine > li{
+.introVrMachine>li {
 	float: left;
 	margin-left: 10px;
 }
-.introVrMachine > li:first-child{
+
+.introVrMachine>li:first-child {
 	margin-left: 0px;
+}
+
+.title {
+	text-align: left;
 }

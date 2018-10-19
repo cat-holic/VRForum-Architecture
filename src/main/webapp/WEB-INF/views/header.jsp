@@ -9,7 +9,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="/resources/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" />
-<link href="/resources/css/main.css" rel="stylesheet" type="text/css">
+<link href="/resources/css/main.css?ver=5" rel="stylesheet" type="text/css">
 <style type="text/css"></style>
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script src="/resources/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
@@ -20,7 +20,9 @@
 	<div class="container-fluid" id="header">
 		<div id="gnb">
 			<div id="mainLogoWrap">
+				<a href="/">
 				<img src="https://via.placeholder.com/120x60" id="mainLogo">
+				</a>
 			</div>
 			<div class="gnbMenuWrap">
 				active=<c:out value="${param.activeMainMenu }"></c:out>

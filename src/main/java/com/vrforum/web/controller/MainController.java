@@ -19,10 +19,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.vrforum.web.domain.GameVO;
 import com.vrforum.web.domain.UserVO;
 import com.vrforum.web.domain.UserVrVO;
 import com.vrforum.web.domain.VrMachineVO;
+import com.vrforum.web.mapper.GameMapper;
 import com.vrforum.web.mapper.VrInfoMapper;
+import com.vrforum.web.service.GameService;
 import com.vrforum.web.service.UserService;
 
 /**
@@ -35,6 +38,9 @@ public class MainController {
 	
 	@Inject
 	VrInfoMapper vrInfoMapper;
+	
+	@Inject
+	GameService gameMapper;
 	
 	private static final Logger logger = LoggerFactory.getLogger(MainController.class);
 
@@ -117,10 +123,23 @@ public class MainController {
 	
 
 	
-	@RequestMapping("/VrMachine/typicalVrMachine")
+	@RequestMapping("/vrMachine/typicalVrMachine")
 	public String typicalVrMachine(Model model) throws Exception {
 		List<VrMachineVO> vrMachineVOs = vrInfoMapper.selectVrMachines();
 		model.addAttribute("vrMachineVOs", vrMachineVOs);
-		return "/VrMachine/typicalVrMachine";
+		return "/vrMachine/typicalVrMachine";
+	}
+	
+	@RequestMapping(value="/vrGame/vrGameList", method=RequestMethod.GET)
+	public String vrGameList(Model model, String keyword) throws Exception{
+		if(keyword == "" || keyword == null) {
+			List<GameVO> gameVOS = gameMapper.gameList();
+			model.addAttribute("gameVOs", gameVOS);
+		}else {
+			List<GameVO> gameVOS = gameMapper.searchGames(keyword);
+			model.addAttribute("gameVOs", gameVOS);
+		}
+		
+		return "vrGame/vrGameList";
 	}
 }
