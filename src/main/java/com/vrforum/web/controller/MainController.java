@@ -17,6 +17,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.vrforum.web.domain.GameVO;
@@ -141,5 +142,13 @@ public class MainController {
 		}
 		
 		return "vrGame/vrGameList";
+	}
+	
+	@RequestMapping("/vrGame/vrGameInfo")
+	public String vrGameInfo(Model model, 
+			@RequestParam("idx")int idx) throws Exception{
+		GameVO gameVO = gameMapper.selectVO(idx);
+		model.addAttribute("gameVO", gameVO);
+		return "vrGame/vrGameInfo";
 	}
 }

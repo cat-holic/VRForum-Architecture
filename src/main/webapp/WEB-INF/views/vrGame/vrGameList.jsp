@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <jsp:include page="../header.jsp">
-	<jsp:param value="3" name="activeMainMenu" />
+	<jsp:param value="3" name="activatedMainMenu" />
 </jsp:include>
 <style>
 .title {
@@ -86,7 +86,7 @@
 			</jsp:include>
 		</div>
 		<div class="mainContents">
-			<h2 class="title">VR 게임 목록</h2>
+			<h3 class="title">VR 게임 목록</h3>
 			<br>
 			<div class="searchGame">
 				<form class="searchGameForm" method="get">
@@ -109,7 +109,7 @@
 						</tr>
 						<c:forEach items="${gameVOs}" var="gameVO">
 						<tr>
-							<td><a href="/.${gameVO.idx}">${gameVO.name}</a></td>
+							<td><a href="/vrGame/vrGameInfo?idx=${gameVO.idx}">${gameVO.name}</a></td>
 							<td>${gameVO.tags }</td>
 							<td>${gameVO.rate }</td>
 						</tr>

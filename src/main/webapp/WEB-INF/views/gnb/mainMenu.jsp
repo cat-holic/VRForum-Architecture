@@ -43,7 +43,6 @@
 				<div class="subMenuListWrap">
 					<ul class="subMenuList">
 						<li><a href="/vrGame/vrGameList">게임목록</a></li>
-						<li><a href="#">대표 VR기기</a></li>
 						<li><a>랭킹 순위</a></li>
 						<li><a>추천 게임</a></li>
 						<li><a>신작</a></li>
