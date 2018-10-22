@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.vrforum.web.mapper.VrInfoMapper">
+	<select id="selectVrMachines" resultType="VrMachineVO">
+		SELECT * FROM `vr_machine`;
+	</select>
+	
+	<select id="selectIdx" resultType="Integer">
+		SELECT `idx` FROM `vr_machine` where `idx` = 1;
+	</select>
+</mapper>
