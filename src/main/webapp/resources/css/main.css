@@ -280,6 +280,7 @@ ul#mainMenuList {
 .mainContents {
 	display: inline-block;
 	vertical-align: top;
+	text-align:left;
 	width: 80%;
 	background-color: #AAFF99;
 	padding:0 10px 0 10px; 
@@ -327,4 +328,78 @@ a.sideNavMenu {
 
 .title {
 	text-align: left;
+}
+
+
+.title {
+	text-align: left;
+}
+
+.searchGame{
+	margin-bottom: 10px;
+}
+.searchWrap {
+	display: inline-block;
+	vertical-align: top;
+	background-color: white;
+	border: 1px solid #2BFFFF;
+}
+
+#searchGameKeyword {
+	border: none;
+}
+
+.searchGame {
+	text-align: right;
+}
+
+#gameList {
+	width: 100%;
+	
+}
+#gameList > tbody > tr > th {
+	text-align: center;
+	background-color: #B3CCFF;
+}
+
+#gameList > tbody > tr > th:first-child{
+	width:60%;
+	font-weight: 1000;
+
+}
+#gameList > tbody > tr > th:nth-child(2){
+	width:20%;
+}
+#gameList > tbody > tr > th:nth-child(3){
+	width:20%;
+}
+
+#gameList > tbody > tr> td{
+	background-color: white;
+}
+
+#gameList > tbody > tr{
+	height: 25px;
+}
+
+#gameList > tbody > tr:first-child{
+	height: 30px;
+	font-size: 1.2em;
+}
+
+
+#gameListWrap{
+	height : 300px;
+	text-align: center;
+	border: solid 1px;
+	overflow-y : scroll;
+}
+
+#gameListView{
+	margin-bottom: 20px;
+}
+
+.searchGameForm button {
+	border: none;
+	background-color: white;
 }

@@ -3,80 +3,49 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <jsp:include page="../header.jsp">
 	<jsp:param value="3" name="activatedMainMenu" />
-	<jsp:param value="${gameVO}" name="activatedVrGameInfo" />
 </jsp:include>
 <style>
-.title {
-	text-align: left;
+.infoImg{
+	border: 1px solid black;
 }
 
-.searchGame{
-	margin-bottom: 10px;
-}
-.searchWrap {
-	display: inline-block;
-	vertical-align: top;
-	background-color: white;
-	border: 1px solid #2BFFFF;
-}
-
-#searchGameKeyword {
-	border: none;
-}
-
-.searchGame {
-	text-align: right;
-}
-
-#gameList {
-	width: 100%;
+.mainInfoImg{
 	
 }
-#gameList > tbody > tr > th {
-	text-align: center;
-	background-color: #B3CCFF;
+
+.subInfoImg{
+	margin-left: 5px;
 }
 
-#gameList > tbody > tr > th:first-child{
-	width:60%;
-	font-weight: 1000;
-
-}
-#gameList > tbody > tr > th:nth-child(2){
-	width:20%;
-}
-#gameList > tbody > tr > th:nth-child(3){
-	width:20%;
+.subInfoImg:first-child{
+	margin-left: 0;
 }
 
-#gameList > tbody > tr> td{
-	background-color: white;
+.subInfoImgWrap{
+	margin-top: 10px;
 }
 
-#gameList > tbody > tr{
-	height: 25px;
+.infoImgWrap{
+	display: inline-block;
+	vertical-align: top;
 }
 
-#gameList > tbody > tr:first-child{
-	height: 30px;
-	font-size: 1.2em;
+.gameInfoTableWrap{
+	display: inline-block;
+	vertical-align: top;
+	margin-left: 20px;
 }
 
+.gameInfoTableWrap > table > tbody > tr > th{
+	width: 120px;
+} 
 
-#gameListWrap{
-	height : 300px;
-	text-align: center;
-	border: solid 1px;
-	overflow-y : scroll;
+.gameInfoTableWrap > table > tbody > tr{
+	height: 32px;
 }
 
-#gameListView{
-	margin-bottom: 20px;
-}
+.gameInfo{
 
-.searchGameForm button {
-	border: none;
-	background-color: white;
 }
 </style>
 <div id="main">
@@ -84,10 +53,57 @@
 		<div class="sideNav">
 			<jsp:include page="sideNav.jsp" flush="true">
 				<jsp:param value="1" name="activeSideMenu"/>
+				<jsp:param value="1" name="activatedSubSideMenu" />
 			</jsp:include>
 		</div>
 		<div class="mainContents">
-			<h3 class="title">${gameVO.name} - 알아보기</h3>
+			<h4 class="title">${gameVO.name} - 알아보기</h4>
+			<div class="game">
+				<div class="infoImgWrap">
+					<div>
+						<img class="infoImg mainInfoImg" src="https://via.placeholder.com/260x210">
+					</div>
+					<div class="subInfoImgWrap">
+						<img class="infoImg subInfoImg" src="https://via.placeholder.com/50x30">
+						<img class="infoImg subInfoImg" src="https://via.placeholder.com/50x30">
+						<img class="infoImg subInfoImg" src="https://via.placeholder.com/50x30">
+						<img class="infoImg subInfoImg" src="https://via.placeholder.com/50x30">
+					</div>
+				</div>
+				<div class="gameInfoTableWrap">
+					<table>
+						<tr>
+							<th>개발사</th>
+							<td>VRChat Inc.</td>
+						</tr>
+						<tr>
+							<th>유통사</th>
+							<td>VRChat Inc.</td>
+						</tr>
+						<tr>
+							<th>장르</th>
+							<td>소셜/밈/유머/애니메이션</td>
+						</tr>
+						<tr>
+							<th>발매일</th>
+							<td>2017년 2월 1일</td>
+						</tr>
+						<tr>
+							<th>플랫폼</th>
+							<td>PC</td>
+						</tr>
+						<tr>
+							<th>공식지원 VR</th>
+							<td>HTC VIVE/OCULUS</td>
+						</tr>
+						<tr>
+							<th>공식 홈페이지</th>
+							<td>https://www.vrchat.net</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+				
 		</div>
 	</div>
 </div>
