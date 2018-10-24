@@ -14,17 +14,20 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.vrforum.web.domain.BoardPageVO;
+import com.vrforum.web.domain.GameBoardVO;
 import com.vrforum.web.domain.GameVO;
 import com.vrforum.web.domain.UserVO;
 import com.vrforum.web.domain.UserVrVO;
 import com.vrforum.web.domain.VrMachineVO;
-import com.vrforum.web.mapper.GameMapper;
+import com.vrforum.web.mapper.GameBoardMapper;
 import com.vrforum.web.mapper.VrInfoMapper;
 import com.vrforum.web.service.GameService;
 import com.vrforum.web.service.UserService;
@@ -42,6 +45,9 @@ public class MainController {
 	
 	@Inject
 	GameService gameMapper;
+	
+	@Inject
+	GameBoardMapper gameBaordMapper;
 	
 	private static final Logger logger = LoggerFactory.getLogger(MainController.class);
 
@@ -150,5 +156,22 @@ public class MainController {
 		GameVO gameVO = gameMapper.selectVO(idx);
 		model.addAttribute("gameVO", gameVO);
 		return "vrGame/vrGameInfo";
+	}
+	
+	@RequestMapping("/vrGame/gameTipPage")
+	public String gameTipPage(Model model,
+			@RequestParam("gameIdx")int gameCategory,
+//			@RequestParam("boardCategory")String boardCategory,
+			BoardPageVO boardPageVO) {
+		String boardCategory = "tip";
+		GameBoardVO gameBoardVO = null;
+		try {
+		boardPageVO.setTotalBoardCount(gameBaordMapper.countBoardNum(gameCategory, boardCategory));
+		
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return "vrGame/gameTipPage";
 	}
 }

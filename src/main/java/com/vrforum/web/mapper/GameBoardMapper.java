@@ -12,15 +12,22 @@ import com.vrforum.web.domain.GameBoardVO;
 public interface GameBoardMapper {
 	public int insertBoard(GameBoardVO gameBoardVO) throws Exception;
 
-	public List<GameBoardVO> selectGameBoardVOs() throws Exception;
+	public List<GameBoardVO> selectGameBoardVOs(@Param("gameCategory") int gameCategory,
+			@Param("boardCategory") String boardCategory) throws Exception;
 
-	public GameBoardVO selectGameBoardVO(@Param("idx") int idx) throws Exception;
+	public GameBoardVO selectGameBoardVO(@Param("gameCategory") int gameCategory,
+			@Param("boardCategory") String boardCategory,
+			@Param("sno") int sno) throws Exception;
 
-	public int deleteGameBoard(@Param("idx") int idx) throws Exception;
+	public int deleteGameBoard(@Param("gameCategory") int gameCategory,
+			@Param("boardCategory") String boardCategory,
+			@Param("sno") int sno) throws Exception;
 
-	public int updateGameBoard(GameBoardVO gameBoardVO) throws Exception;
+	public int updateGameBoard(@Param("gameCategory") int gameCategory,
+			@Param("boardCategory") String boardCategory,
+			GameBoardVO gameBoardVO) throws Exception;
 
 	public int countBoardNum(
-			@Param("game_categoy") int idx,
-			@Param("board_category") String boardCategory) throws Exception;
+			@Param("gameCategory") int gameCategory,
+			@Param("boardCategory") String boardCategory) throws Exception;
 }

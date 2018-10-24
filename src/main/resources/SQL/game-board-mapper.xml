@@ -6,36 +6,41 @@
 <mapper namespace="com.vrforum.web.mapper.GameBoardMapper">
 
 <!-- 
-	public int insertBoard(GameBoardVO gameBoardVO)throws Exception;
-	public List<GameBoardVO> selectGameBoardVOs()throws Exception;
-	public GameBoardVO selectGameBoardVO(@Param("idx")int idx)throws Exception;
-	public int deleteGameBoard(@Param("idx")int idx)throws Exception;
-	public int updateGameBoard(GameBoardVO gameBoardVO)throws Exception;
-	public int countBoardNum()throws Exception;
+		public int insertBoard(GameBoardVO gameBoardVO) throws Exception;
+
+	public List<GameBoardVO> selectGameBoardVOs(@Param("gameCategoy") int gameCategory,
+			@Param("boardCategory") String boardCategory) throws Exception;
+
+	public GameBoardVO selectGameBoardVO(@Param("gameCategoy") int gameCategory,
+			@Param("boardCategory") String boardCategory,
+			@Param("sno") int sno) throws Exception;
+
+	public int deleteGameBoard(@Param("gameCategoy") int gameCategory,
+			@Param("boardCategory") String boardCategory,
+			@Param("sno") int sno) throws Exception;
+
+	public int updateGameBoard(@Param("gameCategoy") int gameCategory,
+			@Param("boardCategory") String boardCategory,
+			GameBoardVO gameBoardVO) throws Exception;
+
+	public int countBoardNum(
+			@Param("gameCategoy") int gameCategory,
+			@Param("boardCategory") String boardCategory) throws Exception;
  -->
- 	<select id="countBoardNum">
+ 	<select id="countBoardNum" resultType="int">
  		SELECT count(`c_sno`)
  		FROM `game_board`
  		WHERE 
- 			`board_category` = #{gameVO.boardCategory} AND
- 			`game_category`
+ 			`board_category` = #{boardCategory} AND
+ 			`game_category`= #{gameCategory}
  	</select>
- 	<insert id="insertBoard">
- 		INSERT INTO `
- 	</insert>
-	<select id="insertBoard" resultType="GameVO">
-		SELECT * 
-		FROM `game_list`
-		WHERE idx = #{idx};
-	</select>
-	
-	<select id="selectVOs" resultType="GameVO">
-		SELECT * FROM `game_list`;
-	</select>
-	
-	<select id="selectSearchVOs" resultType="GameVO">
-		SELECT * 
-		FROM `game_list`
-		WHERE `name` LIKE "%${keyword}%" OR tags LIKE "%${keyword}%";
-	</select>
+ 	
+ 	<select id="selectGameBoardVOs" resultType="GameBoardVo">
+ 		SELECT `c_sno` as sno, title, writer, hit, recommend, writeTime
+ 		FROM `game_board`
+ 		WHERE
+ 			`board_category` = #{boardCategory} AND
+ 			`game_category`= #{gameCategory};
+ 	</select>
+
 </mapper>

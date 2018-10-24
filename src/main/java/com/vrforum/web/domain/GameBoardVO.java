@@ -67,6 +67,13 @@ public class GameBoardVO extends GameVO {
 	public void setRecommend(int recommend) {
 		this.recommend = recommend;
 	}
+
+	@Override
+	public String toString() {
+		return "GameBoardVO [sno=" + sno + ", title=" + title + ", writer=" + writer + ", contents=" + contents
+				+ ", hit=" + hit + ", recommend=" + recommend + ", writeTime=" + writeTime + ", image=" + image + "]";
+	}
+	
 	
 	
 }

@@ -33,7 +33,7 @@
 				<li>
 					<ul>
 						<li><a <c:choose><c:when test="${param.activatedSideMenu eq 1 }">class="sideNavMenu activatedSideMenu"</c:when> <c:otherwise>class="sideNavMenu"</c:otherwise></c:choose>>알아보기</a></li>
-						<li><a>유저 가이드/팁</a></li>
+						<li><a href="/vrGame/gameTipPage?gameIdx=${gameVO.idx }">유저 가이드/팁</a></li>
 						<li><a>유저 리뷰</a></li>
 						<li><a>자유 게시판</a></li>
 					</ul>
