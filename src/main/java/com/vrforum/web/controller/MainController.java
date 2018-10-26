@@ -29,6 +29,7 @@ import com.vrforum.web.domain.UserVrVO;
 import com.vrforum.web.domain.VrMachineVO;
 import com.vrforum.web.mapper.GameBoardMapper;
 import com.vrforum.web.mapper.VrInfoMapper;
+import com.vrforum.web.service.GameBoardService;
 import com.vrforum.web.service.GameService;
 import com.vrforum.web.service.UserService;
 
@@ -47,7 +48,7 @@ public class MainController {
 	GameService gameMapper;
 	
 	@Inject
-	GameBoardMapper gameBaordMapper;
+	GameBoardService gameBoardMapper;
 	
 	private static final Logger logger = LoggerFactory.getLogger(MainController.class);
 
@@ -161,17 +162,15 @@ public class MainController {
 	@RequestMapping("/vrGame/gameTipPage")
 	public String gameTipPage(Model model,
 			@RequestParam("gameIdx")int gameCategory,
-//			@RequestParam("boardCategory")String boardCategory,
-			BoardPageVO boardPageVO) {
+			BoardPageVO boardPageVO) throws Exception{
 		String boardCategory = "tip";
-		GameBoardVO gameBoardVO = null;
-		try {
-		boardPageVO.setTotalBoardCount(gameBaordMapper.countBoardNum(gameCategory, boardCategory));
-		
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		
+		boardPageVO.setTotalBoardCount(gameBoardMapper.countBoardNum(gameCategory, boardCategory));
+		List<GameBoardVO> gameBoardVOs = gameBoardMapper.selectBoards(gameCategory, boardCategory);
+		GameVO gameVO = gameMapper.selectVO(gameCategory);
+		model.addAttribute("gameBoardVOs", gameBoardVOs);
+		model.addAttribute("boardPageVO", boardPageVO);
+		model.addAttribute("gameVO", gameVO);
+
 		return "vrGame/gameTipPage";
 	}
 }

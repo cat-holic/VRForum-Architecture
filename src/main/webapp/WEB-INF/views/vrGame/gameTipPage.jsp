@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <jsp:include page="../header.jsp">
 	<jsp:param value="3" name="activatedMainMenu" />
 </jsp:include>
@@ -33,6 +34,16 @@
 						<td></td>
 						<td></td>
 					</tr>
+					<c:forEach items="${gameBoardVOs }" var="board">
+						<tr>
+							<td>${board.sno }</td>
+							<td><a href="/vrGame/pageView/${board.sno }">${board.title }</a></td>
+							<td>${board.writer }</td>
+							<td>${board.hit }</td>
+							<td>${board.recommend }</td>
+							<td><fmt:formatDate value="${board.writeTime }" pattern="Y-M-d H:m:S"/> </td>
+						</tr>
+					</c:forEach>
 				</table>
 			</div>
 		</div>
